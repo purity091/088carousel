@@ -1,0 +1,202 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans bg-gray-100;
+  }
+}
+
+/* Custom Scrollbar - Friendly Names / Scoped Utilities approach */
+@layer components {
+  /* Main UI Classes with "Friendly" Semantic Names */
+
+  .canvas-wrapper {
+    @apply relative w-full flex justify-center overflow-hidden py-8;
+  }
+
+  .slide-container {
+    @apply relative w-[540px] h-[775px] shadow-2xl flex flex-col transition-colors duration-300 overflow-hidden;
+  }
+
+  /* ===== HERO IMAGE SECTION ===== */
+  .hero-section {
+    @apply relative w-full overflow-hidden;
+    height: 55%;
+  }
+
+  .hero-image {
+    @apply absolute inset-0 w-full h-full object-cover;
+  }
+
+  .hero-gradient-overlay {
+    @apply absolute inset-0 z-[1];
+  }
+
+  .hero-vignette {
+    @apply absolute inset-0 z-[1] pointer-events-none;
+    background: radial-gradient(ellipse at center, transparent 50%, rgba(0, 0, 0, 0.35) 100%);
+  }
+
+  .hero-pattern {
+    @apply absolute inset-0 z-[2] pointer-events-none;
+  }
+
+  /* Accent Corner Decorations */
+  .hero-accent-corner {
+    @apply absolute w-10 h-10 z-[3] pointer-events-none;
+    border-width: 3px;
+    border-style: solid;
+    border-color: transparent;
+  }
+
+  .hero-accent-tl {
+    @apply top-5 left-5;
+    border-top-color: inherit;
+    border-left-color: inherit;
+    border-top-left-radius: 6px;
+  }
+
+  .hero-accent-tr {
+    @apply top-5 right-5;
+    border-top-color: inherit;
+    border-right-color: inherit;
+    border-top-right-radius: 6px;
+  }
+
+  /* Logo on image */
+  .hero-logo {
+    @apply absolute top-5 right-16 z-[4];
+  }
+
+  .hero-logo-img {
+    @apply h-10 w-auto object-contain drop-shadow-lg;
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.4));
+  }
+
+  /* Accent Glow */
+  .hero-glow {
+    @apply absolute -top-10 -right-10 w-52 h-52 rounded-full z-[2] pointer-events-none blur-[80px];
+    opacity: 0.18;
+  }
+
+  /* ===== FLOATING ICON BRIDGE ===== */
+  .hero-icon-bridge {
+    @apply relative w-full flex justify-center z-10;
+    margin-top: -28px;
+  }
+
+  .floating-icon {
+    @apply w-14 h-14 rounded-full flex items-center justify-center shadow-xl border-4 z-10 transition-all;
+  }
+
+  /* ===== CONTENT SECTION ===== */
+  .content-section {
+    @apply flex-1 flex flex-col items-center justify-center text-center px-10;
+    margin-top: 8px;
+  }
+
+  .slide-title {
+    @apply text-2xl font-bold mb-3 leading-tight;
+  }
+
+  .title-accent-line {
+    @apply w-12 h-[3px] rounded-full mb-3;
+    opacity: 0.7;
+  }
+
+  .slide-description {
+    @apply text-base opacity-85 leading-relaxed font-light px-2;
+  }
+
+  /* ===== FOOTER ===== */
+  .footer-container {
+    @apply pt-3 w-full flex flex-col items-center justify-center gap-3 relative z-10;
+  }
+
+  .indicator-dots {
+    @apply flex items-center gap-2;
+  }
+
+  .indicator-dot {
+    @apply transition-all duration-300 rounded-full;
+  }
+
+  .brand-footer-bar {
+    @apply w-full flex items-center gap-4 px-6 py-3 mt-1;
+    border-top-width: 1px;
+    border-top-style: solid;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .brand-footer-side-line {
+    @apply flex-1 h-[1px] rounded-full;
+    opacity: 0.25;
+  }
+
+  .brand-footer-center {
+    @apply flex items-center gap-4 flex-shrink-0;
+  }
+
+  .brand-footer-ar {
+    @apply text-base font-bold opacity-90;
+    letter-spacing: 0.02em;
+  }
+
+  .brand-footer-diamond-wrap {
+    @apply flex items-center justify-center;
+  }
+
+  .brand-footer-diamond {
+    @apply w-[6px] h-[6px];
+    transform: rotate(45deg);
+    opacity: 0.6;
+  }
+
+  .brand-footer-en {
+    @apply text-[11px] font-semibold opacity-75;
+    letter-spacing: 0.3em;
+    font-family: 'IBM Plex Sans Arabic', 'Inter', 'Segoe UI', sans-serif;
+  }
+}
+
+@layer utilities {
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+  }
+}
+
+/* Also apply to global scrollbar for friendliness if needed */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
