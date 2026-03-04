@@ -141,8 +141,7 @@
   }
 
   .brand-footer-ar {
-    @apply text-base font-bold opacity-90;
-    letter-spacing: 0.02em;
+    @apply text-[13px] font-bold opacity-90;
   }
 
   .brand-footer-diamond-wrap {
@@ -156,8 +155,7 @@
   }
 
   .brand-footer-en {
-    @apply text-[11px] font-semibold opacity-75;
-    letter-spacing: 0.3em;
+    @apply text-[13px] font-semibold opacity-75;
     font-family: 'IBM Plex Sans Arabic', 'Inter', 'Segoe UI', sans-serif;
   }
 }

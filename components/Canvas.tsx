@@ -171,7 +171,7 @@ export const Canvas = forwardRef<HTMLDivElement, CanvasProps>(({
               className="brand-footer-ar"
               style={{ color: theme.textColor }}
             >
-              منصة المستثمر
+              منصة المستثمر الاقتصادية
             </span>
 
             {/* Decorative line */}
